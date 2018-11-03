@@ -15,8 +15,8 @@ class CreateTableCreditoperations extends Migration
     {
         Schema::create('creditoperations', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('creditcustomer_id');
-            $table->foreign('creditcustomer_id')->references('id')->on('creditcustomers');
+            $table->unsignedInteger('creditcustomer_id');            
+            $table->foreign('creditcustomer_id')->references('id')->on('creditcustomers');           
             $table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->double('total');
